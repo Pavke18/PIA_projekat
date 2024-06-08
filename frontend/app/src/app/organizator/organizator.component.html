@@ -1,0 +1,170 @@
+<!-- <h1>Organizator: {{organizator.ime}} {{organizator.prezime}}</h1> -->
+
+<div class="zahtevi">
+    <div class="container">
+        <div class="row">
+            <h2>Novi zahtevi za registraciju</h2>
+            <table class="prikaz" *ngIf='prikaz'>
+                <tr>
+                    <th class="ime">Ime</th>
+                    <th class="prezime">Prezime</th>
+                    <th class="korIme">Korisnicko ime</th>
+                    <th class="zemlja">Zemlja</th>
+                    <th class="email">Email</th>
+                    <th class="tip">Tip</th>
+                </tr>
+                <tr *ngFor='let z of zahtevi' class="red">
+                    <td>{{z.ime}}</td>
+                    <td>{{z.prezime}}</td>
+                    <td>{{z.korisnickoIme}}</td>
+                    <td>{{z.zemlja}}</td>
+                    <td>{{z.email}}</td>
+                    <td>{{z.tip}}</td>
+                    <td>
+                        <button class="dugmePrihvati" (click)='prihvati(z)'>Prihvati</button>
+                    </td>
+                    <td>
+                        <button  class="dugmeOdbij" (click)='odbij(z)'>Odbij</button>
+                    </td>
+                </tr>
+            </table>
+            <div *ngIf='porukaPrikaz' class="prikazNemaZahteva">
+                {{porukaPrikaz}}
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Dodaj sport/disciplinu </h2>
+            <table class="dodavanje">
+                <tr>
+                    <th>Sport:</th>
+                    <td class="input">
+                        <select id="s" class="polje" name="sport" [(ngModel)]='sport' (click)="dohvatiDiscipline()">
+                            <option value="" selected='selected' >Izaberite sport</option>
+                            <option *ngFor='let s of sportovi'>{{s.sport}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Disciplina:</th>
+                    <td class="input">
+                        <select class="polje" name="disciplina" [(ngModel)]='disciplina'>
+                            <option value="" selected='selected'>Izaberite sportsku disciplinu</option>
+                            <option *ngFor='let d of discipline'>{{d.disciplina}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button (click)='dodaj()'>Dodaj</button>
+                    </td>
+               </tr>
+            </table>
+            <div class="{{klasa}}" *ngIf='poruka'>{{poruka}}</div>
+        </div>
+
+        <div class="row">
+            <h2>Formiraj takmicenje</h2>
+            <table class="takmicenje">
+                <tr>
+                    <th>Sport:</th>
+                    <td class="input">
+                        <select id="s" class="polje" name="sport" [(ngModel)]='sportTakmicenje' (change)="dohvatiDisciplineTakmicenje()">
+                            <option value="" selected='selected' >Izaberite sport</option>
+                            <option *ngFor='let s of sportoviTakmicenje'>{{s.sport}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Disciplina:</th>
+                    <td class="input">
+                        <select class="polje" name="disciplina" [(ngModel)]='disciplinaTakmicenje' (change)='dohvatiSportisteIliEkipe()'>
+                            <option value="" selected='selected'>Izaberite sportsku disciplinu</option>
+                            <option *ngFor='let d of disciplineTakmicenje'>{{d.disciplina}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Konkurencija:</th>
+                    <td class="input">
+                        <select class="polje" name="pol" [(ngModel)]='polTakmicenje' (change)='dohvatiSportisteIliEkipe()'>
+                            <option value="Z" selected>zenska</option>
+                            <option value="M">muska</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Datum pocetka:</th>
+                    <td class="input">
+                        <input type="date" name="pocetak" [(ngModel)]='datumPocetka'>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Datum kraja:</th>
+                    <td class="input">
+                        <input type="date" name="kraj" [(ngModel)]='datumKraja'>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Lokacija:</th>
+                    <td class="input">
+                        <input type="text" name="lokacija" [(ngModel)]='lokacija'>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Delegat:</th>
+                    <td class="input">
+                        <select class="polje" name="delegat" [(ngModel)]='delegatTakmicenja'>
+                            <option value="" selected='selected'>Izaberite delegata takmicenja</option>
+                            <option *ngFor='let d of delegati' value="{{d.korisnickoIme}}">{{d.ime}} {{d.prezime}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr *ngIf='takmicari'>
+                    <th>Takmicari:</th>
+                    <td class="input">
+                        <select class="polje" name="takmicari" [(ngModel)]='takmicariTakmicenje' multiple>
+                            <option *ngFor='let t of takmicari'>{{t.ime_prezime}}-{{t.zemlja}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr *ngIf='ekipe'>
+                    <th>Ekipe:</th>
+                    <td class="input">
+                        <select class="polje" name="ekipe" [(ngModel)]='ekipeTakmicenje' multiple>
+                            <option *ngFor='let e of ekipe'>{{e.zemlja}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button (click)='formirajTakmicenje()'>Formiraj</button>
+                    </td>
+               </tr>
+            </table>
+            <div class="{{klasaTakmicenje}}">{{porukaTakmicenje}}</div>
+        </div>
+
+        <div class="row">
+            <h2>Rekordi u individualnim sportovima</h2>
+            <table class="prikaz" *ngIf='prikaz'>
+                <tr>
+                    <th>Godina</th>
+                    <th>Mesto</th>
+                    <th>Disciplina</th>
+                    <th>Takmicar</th>
+                    <th>Drzava</th>
+                    <th>Rezultat</th>
+                </tr>
+                <tr *ngFor='let r of rekordi' class="red">
+                    <td>{{r.godina}}</td>
+                    <td>{{r.mesto}}</td>
+                    <td>{{r.disciplina}}</td>
+                    <td>{{r.takmicar}}</td>
+                    <td>{{r.drzava}}</td>
+                    <td>{{r.rezultat}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

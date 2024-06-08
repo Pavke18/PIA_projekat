@@ -1,0 +1,25 @@
+<div class="center">
+    <h1>Dobro dosli!</h1>
+    <form>
+        <div class="txt_field">
+            <input type="text" name="korime" [(ngModel)]='korisnickoIme' required>
+            <span></span>
+            <label>Korisnicko ime</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="lozinka" [(ngModel)]='lozinka' required>
+            <span></span>
+            <label>Lozinka</label>
+        </div>
+        <div class="pass">
+            <a href='promena_lozinke'>Zelite da promenite lozinku?</a>
+        </div>
+        <input type="submit" value="PRIJAVA" (click)='prijavaKorisnika()'>
+        <div class="signup_link">
+            Niste registrovani? Registrujte se <a href="registracija"> ovde</a>
+        </div>
+    </form>
+    <div *ngIf='poruka' class="greska">
+        {{poruka}}
+    </div>
+</div>

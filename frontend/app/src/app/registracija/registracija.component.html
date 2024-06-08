@@ -1,0 +1,64 @@
+<div class="center">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="../../assets/logoReg.jpg">
+        </div>
+        <div class="col-md-9">
+            <h1>Registrujte se</h1>
+        </div>
+    </div>
+    <form method="POST">
+        <div class="txt_field">
+            <input type="text" name="korime" [(ngModel)]='korisnickoIme' required>
+            <span></span>
+            <label>Korisnicko ime</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="loz" [(ngModel)]='lozinka' required>
+            <span></span>
+            <label>Lozinka</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="potvrdaLoz" [(ngModel)]='potvrdaLozinke' required>
+            <span></span>
+            <label>Potvrdite lozinku</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" name="ime" [(ngModel)]='ime' required>
+            <span></span>
+            <label>Ime</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" name="prezime" [(ngModel)]='prezime' required>
+            <span></span>
+            <label>Prezime</label>
+        </div>
+        <!-- <div class="txt_field">
+            <select name="pr" [(ngModel)]='proizvod'>
+                <option *ngFor='let p of ulogovan.proizvodi'>{{p.naziv}}</option>
+            </select>
+            <span></span>
+            <label>Zemlja</label>
+        </div> -->
+        <div class="txt_field">
+            <input type="text" name="nac" [(ngModel)]='zemlja' required>
+            <span></span>
+            <label>Zemlja</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" name="email" [(ngModel)]='email' required>
+            <span></span>
+            <label>Email</label>
+        </div>
+        <div class="txt_field_radio">
+            <label>Tip korisnika</label>
+            <input type="radio" name="tip" value="delegat" [(ngModel)]='tip'>Delegat
+            <input type="radio" name="tip" value="vodja" [(ngModel)]='tip'>Vodja
+        </div>
+
+        <input type="submit" value="REGISTRACIJA" (click)='registracija()'>
+    </form>
+    <div *ngIf='poruka' class="{{klasa}}">
+        {{poruka}}
+    </div>
+</div>

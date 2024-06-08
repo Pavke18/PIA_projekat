@@ -1,0 +1,140 @@
+.vodja .row{
+    background-color: aliceblue;
+    margin: 60px;
+    border-radius: 8%;
+    box-shadow: 46px 32px 52px 10px rgba(218, 206, 238, 0.85);
+    -webkit-box-shadow: 46px 32px 52px 10px rgba(129, 116, 248, 0.85);
+    -moz-box-shadow: 46px 32px 52px 10px rgba(217, 195, 240, 0.85);
+}
+
+.vodja h2{
+    text-align: center;
+    padding-top: 30px;
+    text-decoration: underline;
+    color: rgb(22, 0, 56);
+    padding-bottom: 20px;
+}
+
+.vodja table{
+    text-align: center;
+    padding: 5px;
+}
+
+.prijava{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.prijava button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 45px;
+}
+
+.prijava button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.prijava td{
+    padding-bottom: 5px;
+}
+
+.prijava .input{
+    width: 450px;
+    margin-right: 150px;
+    text-align: left;
+}
+
+.prijava .input1{
+    margin-right: 150px;
+    text-align: left;
+}
+
+.prijava th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.prijava .polje{
+    width: 50%;
+    text-align: center;
+}
+
+.greska{
+    color:red;
+    text-align: center;
+    height: 26px;
+    margin-bottom: 8px;
+}
+
+.ok{
+    color:green;
+    text-align: center;
+    height: 26px;
+    margin-bottom: 8px;
+}
+
+.tim{
+    text-align: center;
+}
+
+.tim .brUkupno{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.prikazSportista{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 104px;
+}
+
+.prikazSportista td{
+    padding-bottom: 5px;
+}
+
+.prikazSportista .input{
+    width: 450px;
+    margin-right: 150px;
+    text-align: left;
+}
+
+.prikazSportista th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.prikazSportista .polje{
+    width: 50%;
+    text-align: center;
+}
+
+.breadcrumbs{
+    color: #0e00fc;
+    font-size: 21px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.prikazTabela{
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.red:hover{
+    background-color: lightsteelblue;
+}

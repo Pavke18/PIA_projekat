@@ -1,0 +1,163 @@
+.delegat .row{
+    background-color: aliceblue;
+    margin: 60px;
+    border-radius: 8%;
+    box-shadow: 46px 32px 52px 10px rgba(218, 206, 238, 0.85);
+    -webkit-box-shadow: 46px 32px 52px 10px rgba(129, 116, 248, 0.85);
+    -moz-box-shadow: 46px 32px 52px 10px rgba(217, 195, 240, 0.85);
+}
+
+.delegat h2{
+    text-align: center;
+    padding-top: 30px;
+    text-decoration: underline;
+    color: rgb(22, 0, 56);
+    padding-bottom: 20px;
+}
+
+.delegat table{
+    text-align: center;
+    padding: 5px;
+}
+
+.raspored{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.raspored button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 45px;
+}
+
+.raspored button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.raspored td{
+    padding-bottom: 5px;
+}
+
+.raspored .input{
+    width: 450px;
+    margin-right: 150px;
+    text-align: left;
+}
+
+.raspored th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.raspored .polje{
+    text-align: center;
+    width: 50%;
+}
+
+.greska{
+    text-align: center;
+    color: red;
+    margin-bottom: 1%;
+    margin-top: 1px;
+}
+
+.OK{
+    text-align: center;
+    color:green;
+    margin-bottom: 1%;
+}
+
+.rezultat{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rezultat button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 45px;
+}
+
+.rezultat button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.rezultat td{
+    padding-bottom: 5px;
+}
+
+.rezultat .input{
+    width: 450px;
+    margin-right: 150px;
+    text-align: left;
+}
+
+.rezultat th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.rezultat .polje{
+    text-align: center;
+    width: 50%;
+}
+
+.takmicari{
+    margin-top: 2%;
+}
+
+.takmicari .imena{
+    text-align: right;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    width: 50%;
+}
+
+.takmicari .rez{
+    text-align: left;
+    padding-bottom: 1%;
+    width: 50%;
+}
+
+.takmicari button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 45px;
+    margin-bottom: 1%;
+}
+
+.takmicari button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.pobednici{
+    border:2px solid green;
+    margin-bottom: 4%;
+}

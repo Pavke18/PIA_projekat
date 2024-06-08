@@ -1,0 +1,25 @@
+<div class="center">
+    <h1>Promenite lozinku!</h1>
+    <form method="POST">
+        <div class="txt_field">
+            <input type="text" name="korime" [(ngModel)]='korisnickoIme' required>
+            <span></span>
+            <label>Korisnicko ime</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="lozinka" [(ngModel)]='lozinka' required>
+            <span></span>
+            <label>Stara lozinka</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="novaLoz" [(ngModel)]='nova' required>
+            <span></span>
+            <label>Nova lozinka</label>
+        </div>
+        <input type="submit" value="POTVRDI" (click)='potvrdi()'>
+        <input class="cancel" value="NAZAD" (click)='nazad()'>
+    </form>
+    <div *ngIf='poruka' class="greska">
+        {{poruka}}
+    </div>
+</div>

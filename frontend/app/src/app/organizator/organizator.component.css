@@ -1,0 +1,217 @@
+.zahtevi .row{
+    background-color: aliceblue;
+    margin: 60px;
+    border-radius: 8%;
+    box-shadow: 46px 32px 52px 10px rgba(218, 206, 238, 0.85);
+    -webkit-box-shadow: 46px 32px 52px 10px rgba(129, 116, 248, 0.85);
+    -moz-box-shadow: 46px 32px 52px 10px rgba(217, 195, 240, 0.85);
+}
+
+.zahtevi h2{
+    text-align: center;
+    padding-top: 30px;
+    text-decoration: underline;
+    color: rgb(22, 0, 56);
+    padding-bottom: 20px;
+}
+
+.zahtevi .prikaz th{
+    font-size: 20px;
+    color: rgb(22, 0, 56);
+    padding-bottom: 5px;
+}
+
+.zahtevi table{
+    text-align: center;
+    padding: 5px;
+}
+
+.red td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* padding-right: 40px; */
+}
+
+.red:hover{
+    background-color: lightsteelblue;
+}
+
+.prikaz{
+    margin-bottom: 30px;
+}
+    
+.prikaz button{
+    padding: 5px;
+    width: 80px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+}
+    
+.prikaz .dugmePrihvati:hover{
+    border:2px;
+    background-color: rgb(90, 245, 90);
+    transition: 0.5s;
+}
+
+.prikaz .dugmeOdbij:hover{
+    border:2px;
+    background-color: rgb(255, 131, 131);
+    transition: 0.5s;
+}
+
+.prikaz .ime{
+    width: 80px;
+}
+
+.prikaz .prezime{
+    width: 150px;
+}
+
+.prikaz .korIme{
+    width: 150px;
+}
+
+.prikaz .zemlja{
+    width: 160px;
+}
+
+.prikaz .email{
+    width: 200px;
+}
+
+.prikaz .tip{
+    width: 70px;
+}
+
+.prikazNemaZahteva{
+    color:red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:18px;
+}
+
+.dodavanje{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dodavanje td{
+    padding-bottom: 5px;
+}
+
+.dodavanje .input{
+    width: 450px;
+    margin-right: 150px;
+    /* align-items: left; */
+    /* align:"left" */
+    text-align: left;
+}
+
+.dodavanje th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.dodavanje .polje{
+    width: 50%;
+    text-align: center;
+}
+
+.dodavanje button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 39px;
+    margin: 15px;
+}
+
+.dodavanje button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.zahtevi .greska{
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:18px;
+}
+
+.zahtevi .ok{
+    color: green;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:18px;
+}
+
+.takmicenje{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 402px;
+}
+
+.takmicenje td{
+    padding-bottom: 5px;
+}
+
+.takmicenje .input{
+    width: 450px;
+    margin-right: 150px;
+    /* align-items: left; */
+    /* align:"left" */
+    text-align: left;
+}
+
+.takmicenje th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.takmicenje .polje{
+    width: 50%;
+    text-align: center;
+}
+
+.takmicenje button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 39px;
+    margin: 15px;
+}
+
+.takmicenje button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.takmicenje .greska{
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:18px;
+}
+
+.takmicenje .ok{
+    color:green;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:18px;
+}

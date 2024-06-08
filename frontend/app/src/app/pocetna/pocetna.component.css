@@ -1,0 +1,179 @@
+.slika1{
+    width: 100%;
+     opacity: 0.7;
+}
+
+.pocetak .row{
+    background-color: aliceblue;
+    margin: 60px;
+    border-radius: 8%;
+    box-shadow: 46px 32px 52px 10px rgba(218, 206, 238, 0.85);
+    -webkit-box-shadow: 46px 32px 52px 10px rgba(129, 116, 248, 0.85);
+    -moz-box-shadow: 46px 32px 52px 10px rgba(217, 195, 240, 0.85);
+}
+
+.pocetak h2{
+    text-align: center;
+    padding-top: 30px;
+    text-decoration: underline;
+    color: rgb(22, 0, 56);
+    padding-bottom: 20px;
+}
+
+.pocetak .prikaz th{
+    font-size: 20px;
+    color: rgb(22, 0, 56);
+    padding-bottom: 5px;
+}
+
+.pocetak table{
+    text-align: center;
+    padding: 5px;
+}
+
+.red td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* padding-right: 40px; */
+}
+
+.red:hover{
+    background-color: lightsteelblue;
+}
+
+.slika{
+    width:100px ;
+    padding-left: 30px;
+}
+
+.ime{
+    width: 300px;
+}
+
+.broj{
+    width: 100px;
+}
+
+.paginacija{
+text-decoration: none;
+  display: inline-block;
+  /* padding: 9px 1px; */
+  /* margin-left: 90%; */
+  /* width: 100%; */
+  padding-bottom: 13px;
+  padding-left: 35px;
+}
+
+.paginacija button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+}
+
+.paginacija button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.pretraga{
+    text-align: center;
+    /* margin: 17px; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pretraga button{
+    padding: 5px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    color:rgb(22, 0, 56);
+    height: 45px;
+}
+
+.pretraga button:hover{
+    border-color: #841cec;
+    border:2px;
+    background-color: lightsteelblue;
+    transition: 0.5s;
+}
+
+.pretraga td{
+    padding-bottom: 5px;
+}
+
+.pretraga .input{
+    width: 450px;
+    margin-right: 150px;
+    /* align-items: left; */
+    /* align:"left" */
+    text-align: left;
+}
+
+.pretraga .input1{
+    margin-right: 150px;
+    text-align: left;
+}
+
+.pretraga th{
+    width: 300px;
+    text-align: right;
+    padding-left: 206px;
+    padding-right: 80px;
+    padding-bottom: 12px
+}
+
+.pretraga .polje{
+    width: 50%;
+    text-align: center;
+}
+
+.prikazPretrage{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.prikazNemaRezultata{
+    color:red;
+    text-align: center;
+    padding-bottom: 10px
+}
+
+.pag{
+    text-align: right;
+    padding-right: 65px;
+}
+
+.pagDugme{
+    text-align: left;
+    padding-left: 40px;
+}
+
+.pagi1{
+    padding-right: 35px;
+    padding-bottom: 10px;
+}
+
+.imePrezime{
+    width: 26%;
+}
+
+.zemlja{
+    width: 15.43%;
+}
+
+.sport{
+    width: 17.5%;
+}
+
+.disc{
+    width: 36%;
+}
+
+.pol{
+    width: 5.1%;
+}

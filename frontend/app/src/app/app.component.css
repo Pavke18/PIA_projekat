@@ -1,0 +1,44 @@
+.main-nav{
+    list-style: none;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.main-nav .main-menu li{
+    display: inline-block;
+    margin-left: 13px;
+    margin-bottom: 20px;
+    margin-top: 26px;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.main-nav .main-menu li a{
+    text-decoration: none;
+    color:#841cec;
+    text-transform: uppercase;
+}
+
+.main-nav .main-menu li a:hover{
+    background-color: rgb(204, 204, 255);
+    transition: 0.5s;
+    border: 1px inset #841cec;
+    border-radius: 0px 0px 10px 0px;
+    color:rgb(22, 0, 56);
+}
+
+.main-nav img{
+    height: 75px;
+    width: 190px;
+    border-radius: 30%;
+}
+
+.main-nav .tekst{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bolder;
+    color:rgb(22, 0, 56);
+    text-align: center;
+    text-shadow: 11px -6px 3px rgb(204, 204, 255);
+    margin-bottom: 20px;
+}

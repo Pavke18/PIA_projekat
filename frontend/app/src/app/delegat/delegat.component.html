@@ -1,0 +1,142 @@
+<!-- <p>{{delegat.ime}} {{delegat.prezime}} {{delegat.korisnickoIme}}</p> -->
+
+<div class="delegat">
+    <div class="container">
+        <div class="row">
+            <h2>Unesi raspored takmicenja</h2>
+            <table class="raspored">
+                <tr>
+                    <th>Takmicenje:</th>
+                    <td class="input">
+                        <select class="polje" name="takmicenje" [(ngModel)]='takmicenjeRaspored'
+                            (change)='dohvatiPodatkeOTakmicenju()'>
+                            <option value="" selected='selected'>Sva takmicenja ciji ste delegat</option>
+                            <option *ngFor='let t of takmicenja'>{{t.sport}},{{t.pol}}<output
+                                    *ngIf='t.disciplina'>,</output>{{t.disciplina}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" *ngIf='trajanjeTak'>
+                        {{trajanjeTak}}
+                    </td>
+                </tr>
+                <tr *ngIf='individualanSport'>
+                    <th>Datum:</th>
+                    <td class="input">
+                        <input type="date" name="pocetak" [(ngModel)]='datumUtakmice'>
+                    </td>
+                </tr>
+                <tr *ngIf='individualanSport'>
+                    <th>Vreme:</th>
+                    <td class="input">
+                        <input type="time" name="vreme" [(ngModel)]='vremeUtakmice'>
+                    </td>
+                </tr>
+                <tr *ngIf='individualanSport'>
+                    <th>Runda:</th>
+                    <td class="input">
+                        <select class="polje" [(ngModel)]='rundaRaspored'>
+                            <option value="" selected>Izaberite rundu za koju zelite da unesete raspored</option>
+                            <option *ngFor='let b of brojRundiRaspored'>{{b}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" *ngIf='individualanSport'>
+                        <button (click)='unesiRasporedIndivid()'>Unesi</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" *ngIf='algoritam'>
+                        <button (click)='algoritamEkipniSportovi()'>Algoritam</button>
+                    </td>
+                </tr>
+                <tr *ngIf='ekipniSport'>
+                    <th>Datum:</th>
+                    <td class="input">
+                        <input type="date" name="pocetak" [(ngModel)]='datumUtakmice'>
+                    </td>
+                </tr>
+                <tr *ngIf='ekipniSport'>
+                    <th>Vreme:</th>
+                    <td class="input">
+                        <input type="time" name="vreme" [(ngModel)]='vremeUtakmice'>
+                    </td>
+                </tr>
+                <tr *ngIf='ekipniSport'>
+                    <th>Utakmica:</th>
+                    <td class="input">
+                        <input>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" *ngIf='ekipniSport'>
+                        <button (click)='unesiRasporedEkipno()'>Unesi</button>
+                    </td>
+                </tr>
+
+            </table>
+            <div *ngIf='porukaRaspored' class="{{klasaRaspored}}">
+                {{porukaRaspored}}
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Unesi rezultate</h2>
+            <table class="rezultat">
+                <tr>
+                    <th>Takmicenje:</th>
+                    <td class="input">
+                        <select class="polje" name="takmicenjeRez" [(ngModel)]='takmicenjeRezultati'
+                            (change)='dohvatiTakmicare()'>
+                            <option value="" selected='selected'>Sva takmicenja ciji ste delegat</option>
+                            <option *ngFor='let t of takmicenjaRe'>{{t.sport}},{{t.pol}}<output
+                                    *ngIf='t.disciplina'>,</output>{{t.disciplina}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr *ngIf='igraci'>
+                    <th>Runda:</th>
+                    <td class="input">
+                        <select class="polje" [(ngModel)]='rundaRezultat'>
+                            <option value="">Izaberite rundu za koju zelite da unesete rezultate</option>
+                            <option *ngFor='let b of brojRundi'>{{b}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table class="takmicari">
+                <tr *ngFor='let t of takmicariRez; let i = index'>
+                    <td class="imena">{{t}}</td>
+                    <td class="rez">
+                        <input type="text" name="nizRezultata" [(ngModel)]='nizRezultata[i]'>
+                    </td>
+                </tr>
+                <tr *ngIf='unesiRezultate'>
+                    <td colspan="2">
+                        <button (click)='unesiRezultateTakmicenja()'>Unesi</button>
+                    </td>
+                </tr>
+                <tr *ngIf='krajTakmicenja'>
+                    <td colspan="2">
+                        <button (click)='kraj()'>Kraj</button>
+                    </td>
+                </tr>
+            </table>
+            <div *ngIf='porukaRezultat' class="{{klasaRezultat}}">
+                {{porukaRezultat}}
+            </div>
+            <table class="pobednici" *ngIf='pobedniciTakmicenja'>
+                <tr>
+                    <td colspan="2">
+                        <h3>POBEDNICI</h3>
+                    </td>
+                </tr>
+                <tr *ngFor='let p of naKrajuTakmicari.slice(0,3)'>
+                    <td>{{p}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

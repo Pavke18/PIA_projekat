@@ -1,0 +1,156 @@
+<div class="pocetak">
+    <img src="../../assets/pozadina.jpg" class="slika1">
+
+    <div class="container">
+        <div class="row">
+            <h2>Pregled zemalja ucesnica</h2>
+            <table class="prikaz">
+                <tr>
+                    <th>Zastava</th>
+                    <th>Ime zemlje</th>
+                    <th>Broj sportista</th>
+                </tr>
+                <tr *ngFor='let z of zemlje.slice(prvi,poslednji)' class="red">
+                    <td class="slika"><img src="../../assets/zastave/{{z.zastava}}.png" height="50px" width="80px"></td>
+                    <td class="ime">{{z.ime}}</td>
+                    <td class="broj">{{z.brojSportista}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="paginacija">
+                            <button class="prethodna" (click)='prethodna()'>&laquo; Prethodna</button>
+                            <button class="sledeca" (click)=sledeca()>Sledeca &raquo;</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <h2>Pregled osvojenih medalja</h2>
+            <table class="prikaz">
+                <tr>
+                    <th>Rang</th>
+                    <th>Ime zemlje</th>
+                    <th>Zlato</th>
+                    <th>Srebro</th>
+                    <th>Bronza</th>
+                    <th>Ukupno medalja</th>
+                </tr>
+                <tr *ngFor='let z of zemljeRang.slice(prviMedalje,poslednjiMedalje)' class="red">
+                    <td class="broj">{{z.rang}}.</td>
+                    <td class="ime">{{z.ime}}</td>
+                    <td class="broj">{{z.brZlatnih}}</td>
+                    <td class="broj">{{z.brSrebrnih}}</td>
+                    <td class="broj">{{z.brBronzanih}}</td>
+                    <td class="broj">{{z.ukupnoMedalja}}</td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <div class="paginacija">
+                            <button class="prethodna" (click)='prethodnaM()'>&laquo; Prethodna</button>
+                            <button class="sledeca" (click)=sledecaM()>Sledeca &raquo;</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <h2>Pretraga sportista</h2>
+            <table class="pretraga">
+                <tr>
+                    <th>Ime i prezime:</th>
+                    <td class="input">
+                        <input class="polje" type="text" name="imePrezime" [(ngModel)]='ime_prezime'>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Zemlja:</th>
+                    <td class="input">
+                        <select class="polje" name="zemlja" [(ngModel)]='zemlja'>
+                            <option value="" selected='selected'>Sve zemlje</option>
+                            <option *ngFor='let z of zemlje'>{{z.ime}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Sport:</th>
+                    <td class="input">
+                        <select class="polje" name="sport" [(ngModel)]='sport'>
+                            <option value="" selected='selected'>Svi sportovi</option>
+                            <option *ngFor='let s of sportovi'>{{s.sport}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Disciplina:</th>
+                    <td class="input">
+                        <select class="polje" name="disciplina" [(ngModel)]='disciplina'>
+                            <option value="" selected='selected'>Sve sportske discipline</option>
+                            <option *ngFor='let d of discipline'>{{d.disciplina}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Pol:</th>
+                    <td class="input1">
+                        <input type="radio" name="pol" [(ngModel)]='pol' value="Z">Z
+                        <input type="radio" name="pol" [(ngModel)]='pol' value="M">M
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="input1">
+                        <input type="checkbox" name="medalje" [(ngModel)]='medalja'>samo osvajaci medalja
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pag">
+                        <select name="pag" [(ngModel)]='paginacijaPrikaz'>
+                            <option selected value=''>Izaberite prikaz</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </td>
+                    <td class="pagDugme">
+                        <button (click)='pretraga()'>Pretrazi</button>
+                    </td>
+                </tr>
+            </table>
+            <div *ngIf='prikaz'>
+                <h2>Rezultat pretrage</h2>
+                <table class="prikazPretrage">
+                    <tr>
+                        <td colspan="6" class="pagi1">
+                            <div class="paginacija">
+                                <button class="prethodna" (click)='prethodnaS()'>&laquo; Prethodna</button>
+                                <button class="sledeca" (click)=sledecaS()>Sledeca &raquo;</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="imePrezime">Ime i prezime</th>
+                        <th class="zemlja">Zemlja</th>
+                        <th class="sport">Sport</th>
+                        <th class="disc">Disciplina</th>
+                        <th class="pol">Pol</th>
+                        <!-- <th>Medalja</th> -->
+                    </tr>
+                    <tr *ngFor='let s of sportisti.slice(prviSportista,poslednjiSportista)' class="red">
+                        <td>{{s.ime_prezime}}</td>
+                        <td>{{s.zemlja}}</td>
+                        <td>{{s.sport}}</td>
+                        <td>{{s.disciplina}}</td>
+                        <td>{{s.pol}}</td>
+                        <!-- <td>{{s.medalja}}</td> -->
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf='porukaPrikaz' class="prikazNemaRezultata">
+                {{porukaPrikaz}}
+            </div>
+        </div>
+
+    </div>
+</div>
